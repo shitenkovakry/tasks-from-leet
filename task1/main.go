@@ -42,3 +42,14 @@ func FilterApples(applesCount []int, startingPointHouse int, endingLocationOfHou
 
 	return resultApples
 }
+
+func FilterOranges(orangesCount []int, startingPointHouse int, endingLocationOfHouse int) []int{
+	resultOranges := []int{}
+	for _, orange := range orangesCount {
+		if orange >= startingPointHouse && orange <= endingLocationOfHouse {
+			resultOranges = append(resultOranges, orange)
+		}
+	}
+
+	return resultOranges
+}
