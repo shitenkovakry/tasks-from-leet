@@ -1,9 +1,10 @@
 package main
+func CounterApplesAndOranges(startingPointOfHouse int, endingLocationOfHouse int, appleLocation int, orangeLocation int, apples []int, oranges []int) ([]int, []int){
+	applesCount := CountAllApples(appleLocation, apples)
+	orangesCount := CountAllOranges(orangeLocation, oranges)
 
-/*func CounterApplesAndOranges(startingPointOfHouse int, endingLocationOfHouse int, appleLocation int, orangeLocation int, apples []int, oranges []int) []int{
-
-	//orangeCount := []int{}
-} */
+	return applesCount, orangesCount
+}
 
 func CountAllApples(appleLocation int, apples []int) []int {
 	applesCount := []int{}
@@ -17,3 +18,27 @@ func CountAllApples(appleLocation int, apples []int) []int {
 
 	return applesCount
 }
+
+func CountAllOranges(orangeLocation int, oranges []int) []int {
+	orangesCount := []int{}
+
+
+	for _, orange := range oranges {
+		resultForOrange := orangeLocation + orange
+
+		orangesCount = append(orangesCount, resultForOrange)
+	}
+
+	return orangesCount
+}
+
+/*func FilterApples(applesCount []int, startingPointHouse int,endingLocationOfHouse int) []int{
+	resultApples := []int{}
+	for _, apple := range applesCount {
+		if apple >= 7 || apple <= 11 {
+			resultApples = append(resultApples, apple)
+		}
+	}
+
+	return resultApples
+} */
