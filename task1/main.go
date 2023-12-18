@@ -3,7 +3,10 @@ func CounterApplesAndOranges(startingPointOfHouse int, endingLocationOfHouse int
 	applesCount := CountAllApples(appleLocation, apples)
 	orangesCount := CountAllOranges(orangeLocation, oranges)
 
-	return applesCount, orangesCount
+	filteredApples := FilterApples(applesCount, startingPointOfHouse, endingLocationOfHouse)
+	filteredOranges := FilterOranges(orangesCount, startingPointOfHouse, endingLocationOfHouse)
+
+	return filteredApples, filteredOranges
 }
 
 func CountAllApples(appleLocation int, apples []int) []int {
@@ -52,4 +55,12 @@ func FilterOranges(orangesCount []int, startingPointHouse int, endingLocationOfH
 	}
 
 	return resultOranges
+}
+
+func CountFilteredApples(filteredApples []int) int {
+	lenOfInputArray := len(filteredApples)
+
+	filtered := lenOfInputArray
+
+	return filtered
 }
