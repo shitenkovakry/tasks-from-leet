@@ -8,7 +8,7 @@ import (
 
 func Test_AppleCount1(t *testing.T) {
 	appleLocation := 5
-	apples := []int{-2, 2, 1}
+	apples := []int32{-2, 2, 1}
 
 	expected := []int{3,7,6}
 	actual := CountAllApples(appleLocation, apples)
@@ -38,7 +38,7 @@ func Test_CountFilteredApples1(t *testing.T) {
 
 func Test_OrangeCount1(t *testing.T) {
 	orangeLocation := 15
-	oranges := []int{5, -6}
+	oranges := []int32{5, -6}
 
 	expected := []int{20,9}
 	actual := CountAllOranges(orangeLocation, oranges)
@@ -80,8 +80,8 @@ func Test_CountApplesAndOranges(t *testing.T) {
 	endingLocationOfHouse := 11
 	appleLocation := 5
 	orangeLocation := 15
-	apples := []int{-2,2,1}
-	oranges := []int{5,-6}
+	apples := []int32{-2,2,1}
+	oranges := []int32{5,-6}
 
 	expected1 :=1
 	expected2 := 1

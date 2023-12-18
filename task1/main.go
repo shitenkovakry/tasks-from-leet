@@ -1,5 +1,8 @@
 package main
-func CounterApplesAndOranges(startingPointOfHouse int, endingLocationOfHouse int, appleLocation int, orangeLocation int, apples []int, oranges []int) (int, int){
+
+import "fmt"
+
+func CounterApplesAndOranges(startingPointOfHouse int, endingLocationOfHouse int, appleLocation int, orangeLocation int, apples []int32, oranges []int32) (int, int){
 	applesCount := CountAllApples(appleLocation, apples)
 	orangesCount := CountAllOranges(orangeLocation, oranges)
 
@@ -12,25 +15,25 @@ func CounterApplesAndOranges(startingPointOfHouse int, endingLocationOfHouse int
 	return countOfFilteredApples, countOfFilteredOranges
 }
 
-func CountAllApples(appleLocation int, apples []int) []int {
+func CountAllApples(appleLocation int, apples []int32) []int {
 	applesCount := []int{}
 
 
 	for _, apple := range apples {
-		resultForApple := appleLocation + apple
+		resultForApple := appleLocation + int(apple)
 
-		applesCount = append(applesCount, resultForApple)
+		applesCount = append(applesCount, int(resultForApple))
 	}
 
 	return applesCount
 }
 
-func CountAllOranges(orangeLocation int, oranges []int) []int {
+func CountAllOranges(orangeLocation int, oranges []int32) []int {
 	orangesCount := []int{}
 
 
 	for _, orange := range oranges {
-		resultForOrange := orangeLocation + orange
+		resultForOrange := orangeLocation + int(orange)
 
 		orangesCount = append(orangesCount, resultForOrange)
 	}
@@ -74,4 +77,26 @@ func CountFilteredOranges(filteredOranges []int) int {
 	filtered := lenOfInputArray
 
 	return filtered
+}
+
+// countApplesAndOranges implements the result for hackerrank task count apples and oranges
+func countApplesAndOranges(s int32, t int32, a int32, b int32, apples []int32, oranges []int32) {
+	x, y := CounterApplesAndOranges(int(s), int(t),int(a),int(b),apples, oranges)
+
+	fmt.Println(x)
+	fmt.Println(y)
+}
+
+func main() {
+	countApplesAndOranges(
+		7, 11,
+		5, 15,
+		[]int32{-2, 2, 1},
+		[]int32{5, -6},
+	)
+
+	/* you expect to see here...
+	1
+	1
+	*/
 }
