@@ -1,12 +1,15 @@
 package main
-func CounterApplesAndOranges(startingPointOfHouse int, endingLocationOfHouse int, appleLocation int, orangeLocation int, apples []int, oranges []int) ([]int, []int){
+func CounterApplesAndOranges(startingPointOfHouse int, endingLocationOfHouse int, appleLocation int, orangeLocation int, apples []int, oranges []int) (int, int){
 	applesCount := CountAllApples(appleLocation, apples)
 	orangesCount := CountAllOranges(orangeLocation, oranges)
 
 	filteredApples := FilterApples(applesCount, startingPointOfHouse, endingLocationOfHouse)
 	filteredOranges := FilterOranges(orangesCount, startingPointOfHouse, endingLocationOfHouse)
 
-	return filteredApples, filteredOranges
+	countOfFilteredApples := CountFilteredApples(filteredApples)
+	countOfFilteredOranges := CountFilteredOranges(filteredOranges)
+
+	return countOfFilteredApples, countOfFilteredOranges
 }
 
 func CountAllApples(appleLocation int, apples []int) []int {
