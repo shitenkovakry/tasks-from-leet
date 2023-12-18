@@ -74,3 +74,20 @@ func Test_CountFilteredOranges2(t *testing.T) {
 
 	assert.Equal(t, expected, actual)
 }
+
+func Test_CountApplesAndOranges(t *testing.T) {
+	startingPointOfHouse := 7
+	endingLocationOfHouse := 11
+	appleLocation := 5
+	orangeLocation := 15
+	apples := []int{-2,2,1}
+	oranges := []int{5,-6}
+
+	expected1 :=1
+	expected2 := 1
+
+	actual1,actual2 := CounterApplesAndOranges(startingPointOfHouse, endingLocationOfHouse, appleLocation, orangeLocation, apples, oranges)
+
+	assert.Equal(t, expected1, actual1)
+	assert.Equal(t, expected2, actual2)
+}
