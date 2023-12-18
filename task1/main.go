@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func CounterApplesAndOranges(startingPointOfHouse int, endingLocationOfHouse int, appleLocation int, orangeLocation int, apples []int32, oranges []int32) (int, int){
+func CounterApplesAndOranges(startingPointOfHouse int, endingLocationOfHouse int, appleLocation int, orangeLocation int, apples []int32, oranges []int32) (int, int) {
 	applesCount := CountAllApples(appleLocation, apples)
 	orangesCount := CountAllOranges(orangeLocation, oranges)
 
@@ -18,7 +18,6 @@ func CounterApplesAndOranges(startingPointOfHouse int, endingLocationOfHouse int
 func CountAllApples(appleLocation int, apples []int32) []int {
 	applesCount := []int{}
 
-
 	for _, apple := range apples {
 		resultForApple := appleLocation + int(apple)
 
@@ -31,7 +30,6 @@ func CountAllApples(appleLocation int, apples []int32) []int {
 func CountAllOranges(orangeLocation int, oranges []int32) []int {
 	orangesCount := []int{}
 
-
 	for _, orange := range oranges {
 		resultForOrange := orangeLocation + int(orange)
 
@@ -41,7 +39,7 @@ func CountAllOranges(orangeLocation int, oranges []int32) []int {
 	return orangesCount
 }
 
-func FilterApples(applesCount []int, startingPointHouse int, endingLocationOfHouse int) []int{
+func FilterApples(applesCount []int, startingPointHouse int, endingLocationOfHouse int) []int {
 	resultApples := []int{}
 	for _, apple := range applesCount {
 		if apple >= startingPointHouse && apple <= endingLocationOfHouse {
@@ -52,7 +50,7 @@ func FilterApples(applesCount []int, startingPointHouse int, endingLocationOfHou
 	return resultApples
 }
 
-func FilterOranges(orangesCount []int, startingPointHouse int, endingLocationOfHouse int) []int{
+func FilterOranges(orangesCount []int, startingPointHouse int, endingLocationOfHouse int) []int {
 	resultOranges := []int{}
 	for _, orange := range orangesCount {
 		if orange >= startingPointHouse && orange <= endingLocationOfHouse {
@@ -81,7 +79,7 @@ func CountFilteredOranges(filteredOranges []int) int {
 
 // countApplesAndOranges implements the result for hackerrank task count apples and oranges
 func countApplesAndOranges(s int32, t int32, a int32, b int32, apples []int32, oranges []int32) {
-	x, y := CounterApplesAndOranges(int(s), int(t),int(a),int(b),apples, oranges)
+	x, y := CounterApplesAndOranges(int(s), int(t), int(a), int(b), apples, oranges)
 
 	fmt.Println(x)
 	fmt.Println(y)
