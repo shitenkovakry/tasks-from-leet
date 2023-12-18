@@ -32,13 +32,13 @@ func CountAllOranges(orangeLocation int, oranges []int) []int {
 	return orangesCount
 }
 
-/*func FilterApples(applesCount []int, startingPointHouse int,endingLocationOfHouse int) []int{
+func FilterApples(applesCount []int, startingPointHouse int, endingLocationOfHouse int) []int{
 	resultApples := []int{}
 	for _, apple := range applesCount {
-		if apple >= 7 || apple <= 11 {
+		if apple >= startingPointHouse && apple <= endingLocationOfHouse {
 			resultApples = append(resultApples, apple)
 		}
 	}
 
 	return resultApples
-} */
+}
