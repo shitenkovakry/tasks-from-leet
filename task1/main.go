@@ -64,3 +64,11 @@ func CountFilteredApples(filteredApples []int) int {
 
 	return filtered
 }
+
+func CountFilteredOranges(filteredOranges []int) int {
+	lenOfInputArray := len(filteredOranges)
+
+	filtered := lenOfInputArray
+
+	return filtered
+}
