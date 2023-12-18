@@ -27,6 +27,15 @@ func Test_AppleFilter1(t *testing.T) {
 	assert.Equal(t, expected, actual)
 }
 
+func Test_CountFilteredApples1(t *testing.T) {
+	filteredApples := []int{7}
+
+	expected := 1
+	actual := CountFilteredApples(filteredApples)
+
+	assert.Equal(t, expected, actual)
+}
+
 func Test_OrangeCount1(t *testing.T) {
 	orangeLocation := 15
 	oranges := []int{5, -6}
