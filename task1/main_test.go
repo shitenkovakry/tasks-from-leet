@@ -56,3 +56,21 @@ func Test_OrangeFilter1(t *testing.T) {
 
 	assert.Equal(t, expected, actual)
 }
+
+func Test_CountFilteredOranges1(t *testing.T) {
+	filteredOranges := []int{7,9,2}
+
+	expected := 3
+	actual := CountFilteredOranges(filteredOranges)
+
+	assert.Equal(t, expected, actual)
+}
+
+func Test_CountFilteredOranges2(t *testing.T) {
+	filteredOranges := []int{9}
+
+	expected := 1
+	actual := CountFilteredOranges(filteredOranges)
+
+	assert.Equal(t, expected, actual)
+}
